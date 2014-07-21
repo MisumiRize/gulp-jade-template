@@ -17,6 +17,10 @@ module.exports = (options = {}) ->
 
     file.path = gutil.replaceExtension file.path, ".html"
 
+    if file.isNull()
+      @push file
+      return callback()
+
     if file.isStream()
       @emit "error", new gutil.PluginError PLUGIN_NAME, "Stream is not supported"
       return callback()

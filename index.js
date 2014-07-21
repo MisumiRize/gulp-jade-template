@@ -26,6 +26,10 @@
         _.merge(opts.locals, file.data);
       }
       file.path = gutil.replaceExtension(file.path, ".html");
+      if (file.isNull()) {
+        this.push(file);
+        return callback();
+      }
       if (file.isStream()) {
         this.emit("error", new gutil.PluginError(PLUGIN_NAME, "Stream is not supported"));
         return callback();
