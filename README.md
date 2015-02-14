@@ -1,4 +1,4 @@
-gulp-jade-template
+gulp-jade-template [![Build Status](https://travis-ci.org/MisumiRize/gulp-jade-template.svg?branch=master)](https://travis-ci.org/MisumiRize/gulp-jade-template)
 ==================
 
 [Gulp](https://github.com/gulpjs/gulp) plugin for template with [Jade](https://github.com/visionmedia/jade)

@@ -33,3 +33,13 @@ describe "gulp-jade-template", ()->
         expect(err.message).to.be.equal "Stream is not supported"
         done()
       stream.write streamFile
+
+    it "compiles the jade file", (done)->
+      stream = jadeTemplate filename: path.join __dirname, "fixtures", "test.jade"
+      dataFile =
+        isNull: ()-> false
+        isStream: ()-> false
+        isBuffer: ()-> true
+      stream.on "data", (data)->
+        done()
+      stream.write dataFile
